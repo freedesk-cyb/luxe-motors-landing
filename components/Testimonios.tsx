@@ -24,13 +24,13 @@ const testimonios = [
 
 export default function Testimonios() {
   return (
-    <section id="testimonios" className="py-24 bg-darker">
+    <section id="testimonios" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-gold text-sm tracking-[0.3em] uppercase">
+          <span className="text-[#d4a853] text-sm tracking-[0.3em] uppercase font-medium">
             Clientes Satisfechos
           </span>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mt-4">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold mt-4 text-gray-900">
             Lo Que Dicen de Nosotros
           </h2>
         </div>
@@ -39,25 +39,25 @@ export default function Testimonios() {
           {testimonios.map((testimonio) => (
             <div
               key={testimonio.id}
-              className="bg-dark p-8 border border-gold/10 hover:border-gold/30 transition-colors"
+              className="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:border-[#d4a853] transition-colors"
             >
               <div className="flex items-center gap-4 mb-6">
                 <img
                   src={testimonio.imagen}
                   alt={testimonio.nombre}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-gold"
+                  className="w-16 h-16 rounded-full object-cover border-4 border-[#d4a853]"
                 />
                 <div>
-                  <h4 className="font-semibold">{testimonio.nombre}</h4>
-                  <p className="text-gold text-sm">{testimonio.rol}</p>
+                  <h4 className="font-semibold text-gray-900">{testimonio.nombre}</h4>
+                  <p className="text-[#d4a853] text-sm">{testimonio.rol}</p>
                 </div>
               </div>
-              <p className="text-gray-300 italic leading-relaxed">
+              <p className="text-gray-600 italic leading-relaxed">
                 &ldquo;{testimonio.texto}&rdquo;
               </p>
               <div className="mt-4 flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-gold">
+                  <span key={i} className="text-[#d4a853] text-lg">
                     ★
                   </span>
                 ))}

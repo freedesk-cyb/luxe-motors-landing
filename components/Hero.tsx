@@ -42,27 +42,27 @@ export default function Hero() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/70 to-transparent" />
         </div>
       ))}
 
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
-            <span className="text-gold text-sm tracking-[0.3em] uppercase mb-4 block">
+            <span className="text-[#d4a853] text-sm tracking-[0.3em] uppercase mb-4 block font-medium">
               Bienvenido a LUXE
             </span>
-            <h2 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h2 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
               {slides[current].title}
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               {slides[current].subtitle}
             </p>
             <div className="flex gap-4">
-              <button className="bg-gold text-dark px-8 py-4 font-semibold hover:bg-gold/90 transition-colors">
+              <button className="bg-[#d4a853] text-white px-8 py-4 font-semibold rounded-lg hover:bg-[#c49a45] transition-colors">
                 Explorar Colección
               </button>
-              <button className="border border-gold text-gold px-8 py-4 font-semibold hover:bg-gold/10 transition-colors">
+              <button className="border-2 border-white text-white px-8 py-4 font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-colors">
                 Ver Video
               </button>
             </div>
@@ -76,7 +76,7 @@ export default function Hero() {
             key={index}
             onClick={() => setCurrent(index)}
             className={`w-3 h-3 rounded-full transition-colors ${
-              index === current ? "bg-gold" : "bg-white/30"
+              index === current ? "bg-[#d4a853]" : "bg-white/30"
             }`}
           />
         ))}
@@ -84,13 +84,13 @@ export default function Hero() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 border border-gold/50 flex items-center justify-center hover:bg-gold/10 transition-colors"
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
       >
         ←
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 border border-gold/50 flex items-center justify-center hover:bg-gold/10 transition-colors"
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
       >
         →
       </button>
