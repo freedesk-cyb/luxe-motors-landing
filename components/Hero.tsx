@@ -42,27 +42,27 @@ export default function Hero() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e] via-[#1a1a2e]/80 to-[#1a1a2e]/40" />
         </div>
       ))}
 
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
-            <span className="text-[#d4a853] text-sm tracking-[0.3em] uppercase mb-4 block font-medium">
+            <span className="text-[#e94560] text-sm tracking-[0.3em] uppercase mb-4 block font-medium">
               Bienvenido a LUXE
             </span>
             <h2 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
               {slides[current].title}
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-400 mb-8">
               {slides[current].subtitle}
             </p>
             <div className="flex gap-4">
-              <button className="bg-[#d4a853] text-white px-8 py-4 font-semibold rounded-lg hover:bg-[#c49a45] transition-colors">
+              <button className="bg-[#e94560] text-white px-8 py-4 font-semibold rounded-lg hover:bg-[#d63d55] transition-colors">
                 Explorar Colección
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-colors">
+              <button className="border-2 border-white/30 text-white px-8 py-4 font-semibold rounded-lg hover:bg-white/10 transition-colors">
                 Ver Video
               </button>
             </div>
@@ -76,7 +76,7 @@ export default function Hero() {
             key={index}
             onClick={() => setCurrent(index)}
             className={`w-3 h-3 rounded-full transition-colors ${
-              index === current ? "bg-[#d4a853]" : "bg-white/30"
+              index === current ? "bg-[#e94560]" : "bg-white/30"
             }`}
           />
         ))}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 interface Auto {
   id: number;
@@ -32,8 +31,8 @@ function ModalDetalle({ auto, onClose }: ModalDetalleProps) {
   const [imagenActual, setImagenActual] = useState(0);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+      <div className="bg-[#1a1a2e] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#0f3460] shadow-2xl">
         <div className="relative">
           <img
             src={auto.imagenes[imagenActual]}
@@ -42,7 +41,7 @@ function ModalDetalle({ auto, onClose }: ModalDetalleProps) {
           />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 bg-white/90 w-10 h-10 rounded-full flex items-center justify-center text-xl hover:bg-white transition-colors shadow-lg"
+            className="absolute top-4 right-4 bg-[#1a1a2e]/90 w-10 h-10 rounded-full flex items-center justify-center text-xl text-white hover:bg-[#e94560] transition-colors shadow-lg"
           >
             ✕
           </button>
@@ -53,7 +52,7 @@ function ModalDetalle({ auto, onClose }: ModalDetalleProps) {
                   key={index}
                   onClick={() => setImagenActual(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === imagenActual ? "bg-[#d4a853]" : "bg-white/50"
+                    index === imagenActual ? "bg-[#e94560]" : "bg-white/50"
                   }`}
                 />
               ))}
@@ -64,50 +63,50 @@ function ModalDetalle({ auto, onClose }: ModalDetalleProps) {
         <div className="p-6 md:p-8">
           <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
             <div>
-              <span className="text-[#d4a853] text-sm font-medium tracking-wider uppercase">
+              <span className="text-[#e94560] text-sm font-medium tracking-wider uppercase">
                 {auto.tipo}
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-1">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mt-1">
                 {auto.nombre}
               </h2>
             </div>
             <div className="text-right">
-              <span className="text-[#d4a853] text-2xl md:text-3xl font-bold">
+              <span className="text-[#e94560] text-2xl md:text-3xl font-bold">
                 {auto.precio}
               </span>
             </div>
           </div>
 
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
+          <p className="text-gray-400 text-lg leading-relaxed mb-8">
             {auto.descripcion}
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
             {Object.entries(auto.specs).map(([key, value]) => (
-              <div key={key} className="bg-gray-100 rounded-xl p-4">
+              <div key={key} className="bg-[#0f3460]/30 rounded-xl p-4 border border-[#0f3460]">
                 <span className="text-gray-500 text-sm capitalize">{key.replace("_", " ")}</span>
-                <p className="text-gray-900 font-semibold mt-1">{value}</p>
+                <p className="text-white font-semibold mt-1">{value}</p>
               </div>
             ))}
           </div>
 
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Características</h3>
+            <h3 className="text-xl font-bold text-white mb-4">Características</h3>
             <div className="grid grid-cols-2 gap-3">
               {auto.caracteristicas.map((caract, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <span className="text-[#d4a853]">✓</span>
-                  <span className="text-gray-700">{caract}</span>
+                  <span className="text-[#e94560]">✓</span>
+                  <span className="text-gray-300">{caract}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="flex-1 bg-[#d4a853] text-white py-4 rounded-xl font-semibold hover:bg-[#c49a45] transition-colors">
+            <button className="flex-1 bg-[#e94560] text-white py-4 rounded-xl font-semibold hover:bg-[#d63d55] transition-colors">
               Reservar Prueba de Manejo
             </button>
-            <button className="flex-1 border-2 border-[#d4a853] text-[#d4a853] py-4 rounded-xl font-semibold hover:bg-[#d4a853] hover:text-white transition-colors">
+            <button className="flex-1 border-2 border-[#e94560] text-[#e94560] py-4 rounded-xl font-semibold hover:bg-[#e94560] hover:text-white transition-colors">
               Solicitar Cotización
             </button>
           </div>
@@ -216,16 +215,16 @@ export default function Modelos() {
 
   return (
     <>
-      <section id="modelos" className="py-24 bg-white">
+      <section id="modelos" className="py-24 bg-[#16213e]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-[#d4a853] text-sm tracking-[0.3em] uppercase font-medium">
+            <span className="text-[#e94560] text-sm tracking-[0.3em] uppercase font-medium">
               Nuestra Colección
             </span>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mt-4 text-gray-900">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mt-4 text-white">
               Modelos Exclusivos
             </h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto">
+            <p className="text-gray-400 mt-4 max-w-xl mx-auto">
               Cada vehículo es una obra maestra de ingeniería y diseño
             </p>
           </div>
@@ -234,7 +233,7 @@ export default function Modelos() {
             {modelos.map((auto) => (
               <div
                 key={auto.id}
-                className="group bg-gray-50 border border-gray-200 hover:border-[#d4a853] hover:shadow-xl transition-all duration-300 overflow-hidden rounded-2xl cursor-pointer"
+                className="group bg-[#1a1a2e] border border-[#0f3460] hover:border-[#e94560] hover:shadow-lg hover:shadow-[#e94560]/20 transition-all duration-300 overflow-hidden rounded-2xl cursor-pointer"
                 onClick={() => setAutoSeleccionado(auto)}
               >
                 <div className="relative h-64 overflow-hidden">
@@ -243,24 +242,24 @@ export default function Modelos() {
                     alt={auto.nombre}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <span className="absolute bottom-4 left-4 text-white bg-[#d4a853] px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent" />
+                  <span className="absolute bottom-4 left-4 text-white bg-[#e94560]/90 px-3 py-1 rounded-full text-sm font-medium">
                     {auto.tipo}
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="font-playfair text-2xl font-bold text-white mb-2">
                     {auto.nombre}
                   </h3>
-                  <div className="flex justify-between items-center mb-4 text-sm text-gray-500">
+                  <div className="flex justify-between items-center mb-4 text-sm text-gray-400">
                     <span>{auto.specs.velocidad}</span>
                     <span>{auto.specs.potencia}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-[#d4a853] text-xl font-bold">
+                    <span className="text-[#e94560] text-xl font-bold">
                       {auto.precio}
                     </span>
-                    <button className="bg-[#d4a853]/10 text-[#d4a853] px-4 py-2 text-sm font-semibold rounded-lg hover:bg-[#d4a853] hover:text-white transition-colors">
+                    <button className="bg-[#e94560]/10 text-[#e94560] px-4 py-2 text-sm font-semibold rounded-lg hover:bg-[#e94560] hover:text-white transition-colors">
                       Ver Detalles
                     </button>
                   </div>
